@@ -8,12 +8,18 @@
   </head>
   <body>
     <nav>
-      <h1>Visual Sort</h1><br>
-      <h2>(Written with raw Javascript and CSS)</h2>
-      <select>
-        <option value="bubble">Bubble</option>
-      </select>
-      <button onclick="()">Sort!</button>
+      <div>
+        <h1>Visual Sort</h1><br>
+        <h2>(Written with raw Javascript and CSS)</h2>
+      </div>
+      <div>
+        <select id="sort-type">
+          <option value="bubble">Bubble</option>
+          <option value="selection">Selection</option>
+        </select>
+        <button id="sort">Sort!</button>
+        <button id="reset">Reset</button>
+      </div>
     </nav>
 
     <footer>
@@ -23,6 +29,6 @@
       </p>
     </footer>
 
-    <script type="text/Javascript" src="main.js"></script>
+    <script type="module" src="main.js"></script>
   </body>
 </html>

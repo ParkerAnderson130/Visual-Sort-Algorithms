@@ -1,6 +1,10 @@
 $primary-color: #e48f74;
 $secondary-color: #dab574;
 
+$container-division: 2.5rem;
+$internal-division: .25rem;
+$border-radii: 7.5px;
+
 html {
   background-color: #252525;
   height: 100%;
@@ -15,39 +19,49 @@ body {
   height: 100%;
 }
 
+h1 {font-size: 4rem; font-weight: 600;}
+h2 {font-size: 1.5rem; font-weight: 300;}
+p {font-size: 1rem; font-weight: 100;}
+
 nav {
   color: $primary-color;
   grid-row-start: 1;
-  line-height: .1rem;
   margin: auto;
   text-align: center;
 
-  h1 {font-size: 4rem; font-weight: 600;}
-  h2 {font-size: 1.5rem; font-weight: 300;}
+  div {margin: $container-division;}
 
+  h1, h2 {margin: 0 auto;}
+  
+  select {width: 10rem;}
   button, select {
-    background-color: transparent; 
-    border: .2rem $secondary-color solid; border-radius: 7.5px;
-    color: $secondary-color; font-size: 1rem;
-    margin: 1rem; padding: .5rem;
+    cursor: pointer; transition: .15s ease-in-out;
+    font-size: 1rem;
+    margin: $internal-division; padding: .5rem; 
   }
-  select { width: 10rem;}
-  button:hover {
+  button:hover, select {
+    background-color: transparent; 
+    border: .15rem $secondary-color solid; border-radius: $border-radii;
+    color: $secondary-color; 
+  }
+  button, select:hover {
     background-color: $secondary-color;
     color: #252525;
-    border: .2rem $secondary-color solid; border-radius: 7.5px;
-    cursor: pointer;
-    transition: .15s ease-in-out;
+    border: .15rem $secondary-color solid; border-radius: $border-radii;
+  }
+  #reset {
+    background: transparent; border: none;
+    color: $secondary-color; font-size: .75rem;
+    display: block;
+    margin: $internal-division auto;
   }
 }
 
 footer {
   color: #e48f74;
   grid-row-start: 3;
-  line-height: 1.5rem;
   margin: auto;
   text-align: center;
-  p {font-weight: 100;}
 }
 
 .node-container {
@@ -59,8 +73,8 @@ footer {
 }
 
 .node {
-  border-radius: 7.5px;
+  border-radius: $border-radii;
   background-color: $secondary-color;
-  margin: .25rem;
+  margin: $internal-division;
   width: 30px;
 }

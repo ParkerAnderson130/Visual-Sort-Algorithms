@@ -1,21 +1,22 @@
 /*
 * Bubble sort implementation in JavaScript for visual sort
 */
+import { Sort } from './sort.js';
 
-import { Sort } from '../main.js';
-
-class Bubble extends Sort {
-    constructor(num) {
-        super(num); 
+export class Bubble extends Sort {
+    constructor(nodes) {
+        super(nodes);
     } // constructor
-    
-    sort() {
-        for (var i = 0; i < nodes.length; i++) {
-            for (var j = 0; j < nodes.length-i; j++) {
-                if (nodes[i] > nodes[i+1]) {
-                    temp = nodes[i];
-                    nodes[i] = nodes[i+1];
-                    nodes[i+1] = temp;
+
+    async sort() {
+        for (var i = 0; i < this.nodes.length; i++) {
+            for (var j = 0; j < this.nodes.length - i - 1; j++) {
+                if (this.nodes[j] > this.nodes[j + 1]) {
+                    var temp = this.nodes[j];
+                    this.nodes[j] = this.nodes[j + 1];
+                    this.nodes[j + 1] = temp;
+                    this.repaint();
+                    await this.sleep(50);
                 } // if
             } // for
         } // for
