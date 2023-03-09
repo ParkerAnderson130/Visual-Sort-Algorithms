@@ -1,6 +1,6 @@
 # Visual-Sort-Algorithms
 
-This is a raw Javascript program that creates div "nodes" and sorts them visually using repainting and sleep functions.
+This is a raw JavaScript program that creates div "nodes" and sorts them visually using repainting and sleep functions.
 
 ## How does it work?
 
